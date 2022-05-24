@@ -11,15 +11,15 @@ export default function DashboardHome() {
 
   return (
     <Page title="Dashboard">
-      {/* <Container maxWidth="xl"> */}
-      <Typography variant="h4" sx={{ mb: 5 }}>
-        Home
-      </Typography>
+      <Container maxWidth="xl">
+        <Typography variant="h4" sx={{ mb: 5 }}>
+          Home
+        </Typography>
 
-      <Grid container spacing={3}>
-        <br />
-      </Grid>
-      {/* </Container> */}
+        <Grid container spacing={3}>
+          <br />
+        </Grid>
+      </Container>
     </Page>
   );
 }

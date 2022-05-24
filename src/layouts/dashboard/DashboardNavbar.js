@@ -43,7 +43,6 @@ DashboardNavbar.propTypes = {
 
 export default function DashboardNavbar({ onOpenSidebar }) {
   const { themeMode, onChangeMode } = useSettings();
-  console.log(themeMode);
   return (
     <RootStyle>
       <ToolbarStyle>
@@ -59,7 +58,9 @@ export default function DashboardNavbar({ onOpenSidebar }) {
             size="small"
             onClick={() => onChangeMode(themeMode === 'dark' ? 'light' : 'dark')}
             sx={{
-              py: 4,
+              py: 1,
+              height: 40,
+              borderRadius: '50%',
               display: 'flex',
               color: 'text.disabled',
               justifyContent: 'center',

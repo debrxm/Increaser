@@ -1,10 +1,6 @@
 import PropTypes from 'prop-types';
 import { Icon } from '@iconify/react';
 import { SnackbarProvider } from 'notistack';
-import infoFill from '@iconify/icons-eva/info-fill';
-import alertCircleFill from '@iconify/icons-eva/alert-circle-fill';
-import alertTriangleFill from '@iconify/icons-eva/alert-triangle-fill';
-import checkmarkCircle2Fill from '@iconify/icons-eva/checkmark-circle-2-fill';
 // material
 import { alpha, useTheme } from '@mui/material/styles';
 import { Box, GlobalStyles } from '@mui/material';
@@ -30,19 +26,19 @@ function SnackbarStyles() {
             '&.SnackbarItem-variantSuccess, &.SnackbarItem-variantError, &.SnackbarItem-variantWarning, &.SnackbarItem-variantInfo':
               {
                 color: theme.palette.text.primary,
-                backgroundColor: theme.palette.background.paper
-              }
+                backgroundColor: theme.palette.background.paper,
+              },
           },
           '& .SnackbarItem-message': {
             padding: '0 !important',
-            fontWeight: theme.typography.fontWeightMedium
+            fontWeight: theme.typography.fontWeightMedium,
           },
           '& .SnackbarItem-action': {
             marginRight: 0,
             color: theme.palette.action.active,
-            '& svg': { width: 20, height: 20 }
-          }
-        }
+            '& svg': { width: 20, height: 20 },
+          },
+        },
       }}
     />
   );
@@ -50,7 +46,7 @@ function SnackbarStyles() {
 
 SnackbarIcon.propTypes = {
   icon: PropTypes.object,
-  color: PropTypes.string
+  color: PropTypes.string,
 };
 
 function SnackbarIcon({ icon, color }) {
@@ -66,7 +62,7 @@ function SnackbarIcon({ icon, color }) {
         alignItems: 'center',
         justifyContent: 'center',
         color: `${color}.main`,
-        bgcolor: (theme) => alpha(theme.palette[color].main, 0.16)
+        bgcolor: (theme) => alpha(theme.palette[color].main, 0.16),
       }}
     >
       <Icon icon={icon} width={24} height={24} />
@@ -75,7 +71,7 @@ function SnackbarIcon({ icon, color }) {
 }
 
 NotistackProvider.propTypes = {
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 export default function NotistackProvider({ children }) {
@@ -90,13 +86,13 @@ export default function NotistackProvider({ children }) {
         autoHideDuration={3000}
         anchorOrigin={{
           vertical: 'top',
-          horizontal: 'right'
+          horizontal: 'right',
         }}
         iconVariant={{
-          success: <SnackbarIcon icon={checkmarkCircle2Fill} color="success" />,
-          error: <SnackbarIcon icon={infoFill} color="error" />,
-          warning: <SnackbarIcon icon={alertTriangleFill} color="warning" />,
-          info: <SnackbarIcon icon={alertCircleFill} color="info" />
+          success: <SnackbarIcon icon={'eva:checkmark-circle-2-fill'} color="success" />,
+          error: <SnackbarIcon icon={'eva:info-fill'} color="error" />,
+          warning: <SnackbarIcon icon={'eva:alert-triangle-fill'} color="warning" />,
+          info: <SnackbarIcon icon={'eva:alert-circle-fill'} color="info" />,
         }}
       >
         {children}
