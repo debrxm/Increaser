@@ -25,10 +25,9 @@ export default function Router() {
       children: [{ path: '/dashboard', element: <DashboardHome /> }],
     },
     {
-      path: '/',
+      path: '/auth',
       element: <LogoOnlyLayout />,
       children: [
-        { path: '/', element: <Navigate to="/dashboard" /> },
         { path: 'login', element: <Login /> },
         { path: 'register', element: <Register /> },
         { path: '404', element: <NotFound /> },

@@ -69,7 +69,7 @@ export default function Register() {
           {smUp && (
             <Typography variant="body2" sx={{ mt: { md: -2 } }}>
               Already have an account? {''}
-              <Link variant="subtitle2" component={RouterLink} to="/login">
+              <Link variant="subtitle2" component={RouterLink} to="/auth/login">
                 Login
               </Link>
             </Typography>
@@ -101,8 +101,8 @@ export default function Register() {
               By registering, I agree to Increaser&nbsp;
               <Link underline="always" color="text.primary" href="#">
                 Terms of Service
-              </Link>
-              {' '}and{' '}
+              </Link>{' '}
+              and{' '}
               <Link underline="always" color="text.primary" href="#">
                 Privacy Policy
               </Link>
@@ -112,7 +112,7 @@ export default function Register() {
             {!smUp && (
               <Typography variant="body2" sx={{ mt: 3, textAlign: 'center' }}>
                 Already have an account?{' '}
-                <Link variant="subtitle2" to="/login" component={RouterLink}>
+                <Link variant="subtitle2" to="/auth/login" component={RouterLink}>
                   Login
                 </Link>
               </Typography>
