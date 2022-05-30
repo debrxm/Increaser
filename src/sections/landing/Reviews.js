@@ -15,6 +15,7 @@ const Header = styled('div')(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
   marginBottom: '2.5rem',
+  textAlign: 'center',
 }));
 const Text = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.down('sm')]: {
@@ -37,11 +38,8 @@ export default function Reviews() {
     <>
       <ContainerStyle>
         <Header>
-          <Text variant="h4" sx={{ color: '#005effcb', mr: 1 }}>
-            9353
-          </Text>
-          <Text variant="h4" sx={{ color: 'text.secondary', mr: 1 }}>
-            AMBITIOUS FOLKS JOINED INCREASER
+          <Text variant="h4" sx={{ color: isLight ? 'text.primary' : 'text.secondary', mr: 1 }}>
+            9353 AMBITIOUS FOLKS JOINED INCREASER
           </Text>
         </Header>
         <BoxStyle>
@@ -55,8 +53,10 @@ export default function Reviews() {
                   <Stack direction="row" spacing={2}>
                     <Avatar sx={{ width: '50px', height: '50px' }} src={Image} alt={Name} />
                     <Stack>
-                      <Typography sx={{ color: 'text.secondary', fontSize: '18px' }}>{Name}</Typography>
-                      <Typography sx={{ color: '#65769a', fontSize: '18px' }}>{Desc}</Typography>
+                      <Typography sx={{ color: isLight ? 'text.primary' : 'text.secondary', fontSize: '18px' }}>
+                        {Name}
+                      </Typography>
+                      <Typography sx={{ fontSize: '18px', color: '#65769a' }}>{Desc}</Typography>
                     </Stack>
                   </Stack>
                 </Stack>
